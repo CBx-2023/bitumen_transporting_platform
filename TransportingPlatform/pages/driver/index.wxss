@@ -1,0 +1,272 @@
+/* pages/driver/index.wxss */
+page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.scrollarea {
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 30rpx;
+  box-sizing: border-box;
+  background-color: #f5f7fa;
+}
+
+/* 司机信息卡片 */
+.driver-card {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.driver-info {
+  display: flex;
+  align-items: center;
+}
+
+.driver-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-right: 20rpx;
+  background-color: #e0e0e0;
+}
+
+.driver-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.driver-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 8rpx;
+}
+
+.driver-phone, .driver-car {
+  font-size: 28rpx;
+  color: #7f8c8d;
+  margin-bottom: 6rpx;
+}
+
+.driver-status {
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.status-free {
+  background-color: #2ecc71;
+  color: #ffffff;
+}
+
+.status-busy {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+/* 统计信息卡片 */
+.statistics-card {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10rpx;
+}
+
+.stat-label {
+  font-size: 28rpx;
+  color: #7f8c8d;
+}
+
+/* 订单列表 */
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 30rpx 0 20rpx;
+}
+
+.order-list {
+  margin-bottom: 30rpx;
+}
+
+.order-item {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 2rpx solid #f0f0f0;
+}
+
+.order-id {
+  font-size: 28rpx;
+  color: #7f8c8d;
+}
+
+.order-status {
+  padding: 6rpx 16rpx;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+}
+
+.status-waiting {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+.status-inprogress {
+  background-color: #f39c12;
+  color: #ffffff;
+}
+
+.order-content {
+  margin-bottom: 20rpx;
+}
+
+.order-route {
+  margin-bottom: 20rpx;
+}
+
+.location-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.location-dot {
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 10rpx;
+  margin-right: 16rpx;
+}
+
+.start-dot {
+  background-color: #2ecc71;
+}
+
+.end-dot {
+  background-color: #e74c3c;
+}
+
+.route-line {
+  width: 4rpx;
+  height: 40rpx;
+  background-color: #bdc3c7;
+  margin-left: 8rpx;
+  margin-bottom: 10rpx;
+}
+
+.location-text {
+  font-size: 28rpx;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.order-info {
+  background-color: #f9f9f9;
+  border-radius: 8rpx;
+  padding: 20rpx;
+}
+
+.info-item {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.info-label {
+  font-size: 28rpx;
+  color: #7f8c8d;
+  width: 180rpx;
+}
+
+.info-value {
+  font-size: 28rpx;
+  color: #2c3e50;
+  flex: 1;
+}
+
+.price {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 20rpx;
+}
+
+.action-btn {
+  min-width: 160rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+  line-height: 70rpx;
+  border-radius: 8rpx;
+  background-color: #f5f7fa;
+  color: #7f8c8d;
+  border: none;
+}
+
+.action-btn.primary {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
+/* 空列表 */
+.empty-list {
+  padding: 100rpx 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty-icon {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 30rpx;
+}
+
+.empty-text {
+  font-size: 32rpx;
+  color: #95a5a6;
+}

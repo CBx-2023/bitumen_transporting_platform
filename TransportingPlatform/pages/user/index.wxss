@@ -1,0 +1,216 @@
+/* pages/user/index.wxss */
+.container {
+  min-height: 100vh;
+  padding: 30rpx;
+  box-sizing: border-box;
+  background-color: #f5f7fa;
+}
+
+/* 用户信息卡片 */
+.user-card {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  margin-right: 20rpx;
+  background-color: #e0e0e0;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 8rpx;
+}
+
+.user-phone, .user-extra {
+  font-size: 28rpx;
+  color: #7f8c8d;
+  margin-bottom: 6rpx;
+}
+
+.user-status {
+  margin-top: 10rpx;
+  padding: 6rpx 16rpx;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.status-free {
+  background-color: #2ecc71;
+  color: #ffffff;
+}
+
+.status-busy {
+  background-color: #e74c3c;
+  color: #ffffff;
+}
+
+.switch-role-btn {
+  padding: 10rpx 20rpx;
+  background-color: #f5f7fa;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #2c3e50;
+}
+
+/* 统计卡片 */
+.stats-card {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 10rpx;
+}
+
+.stat-label {
+  font-size: 24rpx;
+  color: #7f8c8d;
+}
+
+/* 菜单卡片 */
+.menu-card {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 0 30rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid #f5f7fa;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+  background-color: #f5f7fa;
+  border-radius: 8rpx;
+}
+
+.menu-text {
+  flex: 1;
+  font-size: 30rpx;
+  color: #2c3e50;
+}
+
+.menu-arrow {
+  width: 16rpx;
+  height: 16rpx;
+  border-top: 4rpx solid #bdc3c7;
+  border-right: 4rpx solid #bdc3c7;
+  transform: rotate(45deg);
+}
+
+/* 退出登录按钮 */
+.logout-btn {
+  width: 100%;
+  height: 88rpx;
+  background-color: #ffffff;
+  color: #e74c3c;
+  font-size: 32rpx;
+  border-radius: 8rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
+}
+
+/* 版本信息 */
+.version-info {
+  text-align: center;
+  font-size: 24rpx;
+  color: #95a5a6;
+  margin-bottom: 30rpx;
+}
+
+/* 菜单图标样式 */
+.menu-icon.wallet {
+  background-color: #3498db;
+}
+
+.menu-icon.star {
+  background-color: #f1c40f;
+}
+
+.menu-icon.car {
+  background-color: #2ecc71;
+}
+
+.menu-icon.company {
+  background-color: #9b59b6;
+}
+
+.menu-icon.invoice {
+  background-color: #e67e22;
+}
+
+.menu-icon.stats {
+  background-color: #1abc9c;
+}
+
+.menu-icon.report {
+  background-color: #e74c3c;
+}
+
+.menu-icon.verify {
+  background-color: #34495e;
+}
+
+.menu-icon.profile {
+  background-color: #3498db;
+}
+
+.menu-icon.settings {
+  background-color: #7f8c8d;
+}
+
+.menu-icon.help {
+  background-color: #2ecc71;
+}

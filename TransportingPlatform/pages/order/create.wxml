@@ -1,0 +1,57 @@
+<!-- pages/order/create.wxml -->
+<navigation-bar title="创建订单" back="{{true}}" color="white" background="#2c3e50"></navigation-bar>
+<view class="container">
+  <view class="form-container">
+    <view class="form-group">
+      <view class="form-label">起点</view>
+      <view class="location-input-container">
+        <input class="form-input" placeholder="请输入起点位置" value="{{formData.startLocation}}" bindinput="inputStartLocation" />
+        <view class="location-btn" bindtap="chooseStartLocation">
+          <text class="location-btn-text">选择位置</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="form-group">
+      <view class="form-label">终点</view>
+      <view class="location-input-container">
+        <input class="form-input" placeholder="请输入终点位置" value="{{formData.endLocation}}" bindinput="inputEndLocation" />
+        <view class="location-btn" bindtap="chooseEndLocation">
+          <text class="location-btn-text">选择位置</text>
+        </view>
+      </view>
+    </view>
+    
+    <view class="form-group">
+      <view class="form-label">货物类型</view>
+      <view class="picker-container" bindtap="showGoodsTypePicker">
+        <text class="picker-text">{{formData.goodsType}}</text>
+        <text class="picker-arrow">▼</text>
+      </view>
+      <picker-view wx:if="{{showGoodsTypePicker}}" class="picker-view" indicator-style="height: 50px;" value="{{0}}" bindchange="confirmGoodsType">
+        <picker-view-column>
+          <view wx:for="{{goodsTypes}}" wx:key="*this" class="picker-item">{{item}}</view>
+        </picker-view-column>
+      </picker-view>
+    </view>
+    
+    <view class="form-group">
+      <view class="form-label">重量（吨）</view>
+      <input class="form-input" type="digit" placeholder="请输入货物重量" value="{{formData.weight}}" bindinput="inputWeight" />
+    </view>
+    
+    <view class="form-group">
+      <view class="form-label">运费（元）</view>
+      <input class="form-input" type="digit" placeholder="请输入运费" value="{{formData.price}}" bindinput="inputPrice" />
+    </view>
+    
+    <view class="form-group">
+      <view class="form-label">备注（选填）</view>
+      <textarea class="form-textarea" placeholder="请输入备注信息" value="{{formData.remark}}" bindinput="inputRemark"></textarea>
+    </view>
+    
+    <button class="submit-btn" bindtap="submitForm" loading="{{isSubmitting}}" disabled="{{isSubmitting}}">
+      创建订单
+    </button>
+  </view>
+</view>

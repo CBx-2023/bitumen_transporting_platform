@@ -1,0 +1,137 @@
+<!-- pages/user/index.wxml -->
+<navigation-bar title="个人中心" back="{{false}}" color="white" background="#2c3e50"></navigation-bar>
+<view class="container">
+  <!-- 用户信息卡片 -->
+  <view class="user-card">
+    <view class="user-info">
+      <!-- 司机信息 -->
+      <block wx:if="{{userRole === 'driver'}}">
+        <image class="user-avatar" src="{{userInfo.driver.avatar}}" mode="aspectFill"></image>
+        <view class="user-details">
+          <text class="user-name">{{userInfo.driver.name}}</text>
+          <text class="user-phone">{{userInfo.driver.phone}}</text>
+          <text class="user-extra">车牌号：{{userInfo.driver.carNumber}}</text>
+          <view class="user-status {{userInfo.driver.status === '空闲中' ? 'status-free' : 'status-busy'}}">
+            {{userInfo.driver.status}}
+          </view>
+        </view>
+      </block>
+      
+      <!-- 货主信息 -->
+      <block wx:elif="{{userRole === 'owner'}}">
+        <image class="user-avatar" src="{{userInfo.owner.avatar}}" mode="aspectFill"></image>
+        <view class="user-details">
+          <text class="user-name">{{userInfo.owner.name}}</text>
+          <text class="user-phone">{{userInfo.owner.phone}}</text>
+          <text class="user-extra">{{userInfo.owner.company}}</text>
+        </view>
+      </block>
+      
+      <!-- 监管信息 -->
+      <block wx:elif="{{userRole === 'supervisor'}}">
+        <image class="user-avatar" src="{{userInfo.supervisor.avatar}}" mode="aspectFill"></image>
+        <view class="user-details">
+          <text class="user-name">{{userInfo.supervisor.name}}</text>
+          <text class="user-phone">{{userInfo.supervisor.phone}}</text>
+          <text class="user-extra">{{userInfo.supervisor.department}}</text>
+        </view>
+      </block>
+    </view>
+    
+    <view class="switch-role-btn" bindtap="switchRole">切换角色</view>
+  </view>
+  
+  <!-- 用户数据统计 -->
+  <view class="stats-card">
+    <!-- 司机统计 -->
+    <block wx:if="{{userRole === 'driver'}}">
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.driver.balance}}</text>
+        <text class="stat-label">账户余额</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.driver.completedOrders}}</text>
+        <text class="stat-label">完成订单</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.driver.rating}}</text>
+        <text class="stat-label">综合评分</text>
+      </view>
+    </block>
+    
+    <!-- 货主统计 -->
+    <block wx:elif="{{userRole === 'owner'}}">
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.owner.balance}}</text>
+        <text class="stat-label">账户余额</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.owner.publishedOrders}}</text>
+        <text class="stat-label">发布订单</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.owner.completedOrders}}</text>
+        <text class="stat-label">完成订单</text>
+      </view>
+    </block>
+    
+    <!-- 监管统计 -->
+    <block wx:elif="{{userRole === 'supervisor'}}">
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.supervisor.managedOrders}}</text>
+        <text class="stat-label">监管订单</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.supervisor.managedDrivers}}</text>
+        <text class="stat-label">监管司机</text>
+      </view>
+      <view class="stat-item">
+        <text class="stat-value">{{userInfo.supervisor.managedOwners}}</text>
+        <text class="stat-label">监管货主</text>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 菜单列表 -->
+  <view class="menu-card">
+    <!-- 角色特定菜单 -->
+    <block wx:if="{{userRole === 'driver'}}">
+      <view class="menu-item" wx:for="{{menuItems.driver}}" wx:key="text" bindtap="onMenuItemClick" data-path="{{item.path}}">
+        <view class="menu-icon {{item.icon}}"></view>
+        <text class="menu-text">{{item.text}}</text>
+        <view class="menu-arrow"></view>
+      </view>
+    </block>
+    
+    <block wx:elif="{{userRole === 'owner'}}">
+      <view class="menu-item" wx:for="{{menuItems.owner}}" wx:key="text" bindtap="onMenuItemClick" data-path="{{item.path}}">
+        <view class="menu-icon {{item.icon}}"></view>
+        <text class="menu-text">{{item.text}}</text>
+        <view class="menu-arrow"></view>
+      </view>
+    </block>
+    
+    <block wx:elif="{{userRole === 'supervisor'}}">
+      <view class="menu-item" wx:for="{{menuItems.supervisor}}" wx:key="text" bindtap="onMenuItemClick" data-path="{{item.path}}">
+        <view class="menu-icon {{item.icon}}"></view>
+        <text class="menu-text">{{item.text}}</text>
+        <view class="menu-arrow"></view>
+      </view>
+    </block>
+    
+    <!-- 通用菜单 -->
+    <view class="menu-item" wx:for="{{menuItems.common}}" wx:key="text" bindtap="onMenuItemClick" data-path="{{item.path}}">
+      <view class="menu-icon {{item.icon}}"></view>
+      <text class="menu-text">{{item.text}}</text>
+      <view class="menu-arrow"></view>
+    </view>
+  </view>
+  
+  <!-- 退出登录 -->
+  <view class="logout-btn" bindtap="logout">退出登录</view>
+  
+  <!-- 版本信息 -->
+  <view class="version-info">
+    <text>沥青运输平台 v1.0.0</text>
+  </view>
+</view>

@@ -1,0 +1,135 @@
+<!-- pages/order/detail.wxml -->
+<navigation-bar title="订单详情" back="{{true}}" color="white" background="#2c3e50"></navigation-bar>
+<view class="container">
+  <!-- 加载中 -->
+  <view class="loading-container" wx:if="{{isLoading}}">
+    <view class="loading"></view>
+    <text class="loading-text">加载中...</text>
+  </view>
+  
+  <!-- 订单详情 -->
+  <block wx:if="{{!isLoading && orderDetail}}">
+    <!-- 订单状态 -->
+    <view class="status-card">
+      <text class="status-text {{orderDetail.status === '待接单' ? 'status-waiting' : (orderDetail.status === '运输中' ? 'status-inprogress' : 'status-completed')}}">{{orderDetail.status}}</text>
+      <text class="order-id">订单号：{{orderDetail.id}}</text>
+    </view>
+    
+    <!-- 路线信息 -->
+    <view class="detail-card">
+      <view class="card-title">路线信息</view>
+      <view class="route-info">
+        <view class="location-item">
+          <view class="location-dot start-dot"></view>
+          <text class="location-text">{{orderDetail.startLocation}}</text>
+        </view>
+        <view class="route-line"></view>
+        <view class="location-item">
+          <view class="location-dot end-dot"></view>
+          <text class="location-text">{{orderDetail.endLocation}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 货物信息 -->
+    <view class="detail-card">
+      <view class="card-title">货物信息</view>
+      <view class="info-item">
+        <text class="info-label">货物类型：</text>
+        <text class="info-value">{{orderDetail.goodsType}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">重量：</text>
+        <text class="info-value">{{orderDetail.weight}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">运费：</text>
+        <text class="info-value price">{{orderDetail.price}}</text>
+      </view>
+      <view class="info-item" wx:if="{{orderDetail.remark}}">
+        <text class="info-label">备注：</text>
+        <text class="info-value">{{orderDetail.remark}}</text>
+      </view>
+    </view>
+    
+    <!-- 货主信息 -->
+    <view class="detail-card" wx:if="{{userRole === 'driver' || userRole === 'supervisor'}}">
+      <view class="card-title">货主信息</view>
+      <view class="info-item">
+        <text class="info-label">姓名：</text>
+        <text class="info-value">{{orderDetail.ownerInfo.name}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">联系电话：</text>
+        <text class="info-value">{{orderDetail.ownerInfo.phone}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">公司：</text>
+        <text class="info-value">{{orderDetail.ownerInfo.company}}</text>
+      </view>
+      <view class="contact-btn" bindtap="contactOwner">联系货主</view>
+    </view>
+    
+    <!-- 司机信息 -->
+    <view class="detail-card" wx:if="{{orderDetail.driverInfo && (userRole === 'owner' || userRole === 'supervisor')}}">
+      <view class="card-title">司机信息</view>
+      <view class="info-item">
+        <text class="info-label">姓名：</text>
+        <text class="info-value">{{orderDetail.driverInfo.name}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">联系电话：</text>
+        <text class="info-value">{{orderDetail.driverInfo.phone}}</text>
+      </view>
+      <view class="info-item">
+        <text class="info-label">车牌号：</text>
+        <text class="info-value">{{orderDetail.driverInfo.carNumber}}</text>
+      </view>
+      <view class="contact-btn" bindtap="contactDriver">联系司机</view>
+    </view>
+    
+    <!-- 订单时间线 -->
+    <view class="detail-card">
+      <view class="card-title">订单动态</view>
+      <view class="timeline">
+        <view class="timeline-item" wx:for="{{orderDetail.timeline}}" wx:key="time">
+          <view class="timeline-dot"></view>
+          <view class="timeline-content">
+            <text class="timeline-time">{{item.time}}</text>
+            <text class="timeline-event">{{item.event}}</text>
+            <text class="timeline-operator">操作人：{{item.operator}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 操作按钮 -->
+    <view class="action-buttons">
+      <!-- 司机操作 -->
+      <block wx:if="{{userRole === 'driver'}}">
+        <block wx:if="{{orderDetail.status === '待接单'}}">
+          <button class="action-btn primary" bindtap="takeOrder">接单</button>
+        </block>
+        <block wx:if="{{orderDetail.status === '运输中'}}">
+          <button class="action-btn" bindtap="startNavigation">开始导航</button>
+          <button class="action-btn primary" bindtap="completeOrder">完成订单</button>
+        </block>
+      </block>
+      
+      <!-- 货主操作 -->
+      <block wx:if="{{userRole === 'owner'}}">
+        <block wx:if="{{orderDetail.status === '待接单'}}">
+          <button class="action-btn danger" bindtap="cancelOrder">取消订单</button>
+        </block>
+        <block wx:if="{{orderDetail.status === '运输中'}}">
+          <button class="action-btn primary" bindtap="confirmReceipt">确认收货</button>
+        </block>
+      </block>
+      
+      <!-- 监管操作 -->
+      <block wx:if="{{userRole === 'supervisor' && orderDetail.status === '运输中'}}">
+        <button class="action-btn primary" bindtap="viewTrack">查看轨迹</button>
+      </block>
+    </view>
+  </block>
+</view>

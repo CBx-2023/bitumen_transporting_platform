@@ -1,0 +1,25 @@
+<!-- pages/role-select/index.wxml -->
+<view class="container">
+  <view class="header">
+    <text class="title">请选择您的角色</text>
+    <text class="subtitle">沥青运输平台为您提供不同角色的服务</text>
+  </view>
+  
+  <view class="role-list">
+    <view 
+      class="role-item" 
+      wx:for="{{roles}}" 
+      wx:key="id" 
+      bindtap="selectRole" 
+      data-role="{{item.id}}"
+      style="background-color: {{item.color}}">
+      <image class="role-icon" src="{{item.icon}}" mode="aspectFit"></image>
+      <text class="role-name">{{item.name}}</text>
+      <text class="role-desc">点击进入</text>
+    </view>
+  </view>
+  
+  <view class="footer">
+    <text class="copyright">© 2023 沥青运输平台 版权所有</text>
+  </view>
+</view>

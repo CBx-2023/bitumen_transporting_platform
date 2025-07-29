@@ -1,0 +1,40 @@
+<!--index.wxml-->
+<navigation-bar title="沥青运输平台" back="{{false}}" color="white" background="#2c3e50"></navigation-bar>
+<scroll-view class="scrollarea" scroll-y type="list">
+  <view class="container">
+    <view class="logo-container">
+      <image class="logo" src="/pages/images/logo.png" mode="aspectFit"></image>
+      <text class="app-name">沥青运输平台</text>
+    </view>
+    
+    <view class="form-container">
+      <view class="form-header">
+        <text class="form-title">{{isLogin ? '登录' : '注册'}}</text>
+      </view>
+      
+      <view class="form-item">
+        <text class="form-label">手机号</text>
+        <input class="form-input" type="number" maxlength="11" placeholder="请输入手机号" bindinput="inputPhone" value="{{phone}}" />
+      </view>
+      
+      <view class="form-item">
+        <text class="form-label">密码</text>
+        <input class="form-input" password placeholder="请输入密码" bindinput="inputPassword" value="{{password}}" />
+      </view>
+      
+      <button class="submit-btn" bindtap="submitForm" loading="{{isLoading}}">
+        {{isLogin ? '登录' : '注册'}}
+      </button>
+      
+      <view class="form-footer">
+        <text class="switch-form" bindtap="switchForm">
+          {{isLogin ? '没有账号？点击注册' : '已有账号？点击登录'}}
+        </text>
+      </view>
+    </view>
+    
+    <view class="footer">
+      <text class="copyright">© 2023 沥青运输平台 版权所有</text>
+    </view>
+  </view>
+</scroll-view>
