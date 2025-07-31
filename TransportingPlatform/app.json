@@ -14,13 +14,11 @@
     "navigationBarTextStyle": "white",
     "navigationStyle": "custom",
     "navigationBarBackgroundColor": "#2c3e50",
+    "onReachBottomDistance": 50,
     "navigationBarTitleText": "沥青运输平台"
   },
   "tabBar": {
-    "color": "#999999",
-    "selectedColor": "#2c3e50",
-    "backgroundColor": "#ffffff",
-    "borderStyle": "black",
+    "custom": true,
     "list": [
       {
         "pagePath": "pages/index/index",
@@ -36,13 +34,9 @@
       }
     ]
   },
-  "style": "v2",
-  "renderer": "skyline",
   "rendererOptions": {
     "skyline": {
       "defaultDisplayBlock": true,
-      "defaultContentBox": true,
-      "tagNameStyleIsolation": "legacy",
       "disableABTest": true,
       "sdkVersionBegin": "3.0.0",
       "sdkVersionEnd": "15.255.255"

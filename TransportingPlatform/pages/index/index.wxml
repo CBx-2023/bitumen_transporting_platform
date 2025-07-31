@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <navigation-bar title="沥青运输平台" back="{{false}}" color="white" background="#2c3e50"></navigation-bar>
-<scroll-view class="scrollarea" scroll-y type="list">
+<view class="scrollarea">
   <view class="container">
     <view class="logo-container">
       <image class="logo" src="/pages/images/logo.png" mode="aspectFit"></image>
@@ -32,9 +32,9 @@
         </text>
       </view>
     </view>
-    
+    <!-- 样式修改 -->
     <view class="footer">
       <text class="copyright">© 2023 沥青运输平台 版权所有</text>
     </view>
   </view>
-</scroll-view>
+</view>

@@ -1,8 +1,13 @@
 /* pages/supervisor/index.wxss */
 page {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f7f7f7;
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
 }
 
 .scrollarea {
@@ -11,6 +16,7 @@ page {
 }
 
 .container {
+  margin-top: 200rpx;
   min-height: 100vh;
   padding: 30rpx;
   box-sizing: border-box;
@@ -19,6 +25,7 @@ page {
 
 /* 监管人员信息卡片 */
 .supervisor-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -62,6 +69,7 @@ page {
 
 /* 统计信息卡片 */
 .statistics-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -99,6 +107,7 @@ page {
 
 .order-list {
   margin-bottom: 30rpx;
+  width: 98%;
 }
 
 .order-item {
