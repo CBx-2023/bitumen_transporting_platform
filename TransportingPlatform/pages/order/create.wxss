@@ -1,19 +1,25 @@
 /* pages/order/create.wxss */
 page {
-  min-height: 100vh;
+  height: 100vh; /* 固定高度 */
   display: flex;
   flex-direction: column;
   background-color: #f7f7f7;
   overflow-x: hidden; /* 隐藏水平滚动条 */
+  overflow-y: hidden; /* 隐藏垂直滚动条 */
   width: 100%;
   box-sizing: border-box; /* 确保padding不会增加宽度 */
+  position: fixed; /* 固定位置 */
+  top: 0;
+  left: 0;
 }
 
 .container {
-  min-height: 100vh;
+  margin-top: 200rpx; /* 调整为导航栏的高度 */
+  height: calc(100vh - 90rpx); /* 固定高度，减去导航栏高度 */
   padding: 30rpx;
   box-sizing: border-box;
   background-color: #f5f7fa;
+  overflow-y: auto; /* 允许内容滚动 */
 }
 
 .form-container {

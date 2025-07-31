@@ -6,7 +6,7 @@
   height: 100vh; /* 确保容器至少占满整个视口高度 */
   background-color: #f5f7fa;
   position: relative;
-  padding-top: 90rpx;
+  padding-top: 270rpx; /* 调整为导航栏的高度 */
 }
 
 /* 标签页导航 */
