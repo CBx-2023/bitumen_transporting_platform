@@ -1,13 +1,31 @@
 /* pages/user/index.wxss */
-.container {
+page {
+  height: auto;
   min-height: 100vh;
-  padding: 30rpx;
-  box-sizing: border-box;
-  background-color: #f5f7fa;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+}
+
+.container {
+  position: relative;
+  flex: 1;
+  padding: 40rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+  overflow-x: hidden; /* 隐藏水平滚动条 */
 }
 
 /* 用户信息卡片 */
 .user-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -78,6 +96,7 @@
 
 /* 统计卡片 */
 .stats-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -107,6 +126,7 @@
 
 /* 菜单卡片 */
 .menu-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 0 30rpx;
@@ -155,7 +175,7 @@
   color: #e74c3c;
   font-size: 32rpx;
   border-radius: 8rpx;
-  margin-bottom: 30rpx;
+  margin-bottom: 80rpx;
   display: flex;
   align-items: center;
   justify-content: center;

@@ -1,5 +1,5 @@
 <!-- pages/owner/index.wxml -->
-<navigation-bar title="货主端" back="{{false}}" color="white" background="#2c3e50"></navigation-bar>
+<navigation-bar title="货主端" back="{{true}}" color="white" background="#2c3e50"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
     <!-- 货主信息卡片 -->

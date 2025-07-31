@@ -1,4 +1,14 @@
 /* pages/order/create.wxss */
+page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+}
+
 .container {
   min-height: 100vh;
   padding: 30rpx;
@@ -7,6 +17,7 @@
 }
 
 .form-container {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;

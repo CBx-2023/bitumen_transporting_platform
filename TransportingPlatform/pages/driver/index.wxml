@@ -1,5 +1,5 @@
 <!-- pages/driver/index.wxml -->
-<navigation-bar title="司机端" back="{{false}}" color="white" background="#2c3e50"></navigation-bar>
+<navigation-bar title="司机端" back="{{true}}" color="white" background="#2c3e50"></navigation-bar>
 <scroll-view class="scrollarea" scroll-y type="list">
   <view class="container">
     <!-- 司机信息卡片 -->
@@ -34,8 +34,8 @@
     </view>
     
     <!-- 订单列表 -->
-    <view class="section-title">订单列表</view>
     <view class="order-list">
+      <view class="section-title">订单列表</view>
       <block wx:if="{{orderList.length > 0}}">
         <view class="order-item" wx:for="{{orderList}}" wx:key="id">
           <view class="order-header">

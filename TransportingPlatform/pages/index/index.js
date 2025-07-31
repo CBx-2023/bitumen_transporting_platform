@@ -18,6 +18,12 @@ Page({
     }
   },
 
+  onShow() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().updateSelected();
+    }
+  },
+
   // 切换登录/注册表单
   switchForm: function() {
     this.setData({
@@ -74,6 +80,12 @@ Page({
       wx.navigateTo({
         url: '/pages/role-select/index'
       });
+      
+      // 清空输入信息
+      this.setData({
+        phone: '',
+        password: '',
+      })
     }, 1500);
   }
 })

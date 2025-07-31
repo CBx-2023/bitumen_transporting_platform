@@ -1,8 +1,13 @@
 /* pages/owner/index.wxss */
 page {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f7f7f7;
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
 }
 
 .scrollarea {
@@ -19,13 +24,14 @@ page {
 
 /* 货主信息卡片 */
 .owner-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
   margin-bottom: 30rpx;
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -74,6 +80,7 @@ page {
 
 /* 统计信息卡片 */
 .statistics-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -103,6 +110,7 @@ page {
 
 /* 订单列表 */
 .section-title {
+  width: 90%;
   font-size: 36rpx;
   font-weight: bold;
   color: #2c3e50;
@@ -110,6 +118,7 @@ page {
 }
 
 .order-list {
+  width: 90%;
   margin-bottom: 30rpx;
 }
 

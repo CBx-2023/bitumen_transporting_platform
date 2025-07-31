@@ -25,10 +25,12 @@
   padding-top: env(safe-area-inset-top);
   width: 100%;
   box-sizing: border-box;
+  z-index: 1000;
 }
 
 .weui-navigation-bar__left {
   position: relative;
+  top: 20rpx;
   padding-left: var(--left);
   display: flex;
   flex-direction: row;
