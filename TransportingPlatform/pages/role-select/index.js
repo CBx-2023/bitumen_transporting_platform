@@ -3,10 +3,11 @@ Page({
   data: {
     roles: [
       { id: 'driver', name: '司机端', icon: '/pages/images/driver.png', color: '#3498db' },
-      { id: 'owner', name: '货主端', icon: '/pages/images/owner.png', color: '#2ecc71' },
-      { id: 'supervisor', name: '监管端', icon: '/pages/images/supervisor.png', color: '#e74c3c' }
+      { id: 'owner', name: '货主端', icon: '/pages/images/owner.png', color: '#2ecc71' }
     ]
   },
+
+  // { id: 'supervisor', name: '监管端', icon: '/pages/images/supervisor.png', color: '#e74c3c' }
 
   onLoad: function(options) {
     // 页面加载时执行
