@@ -3,10 +3,10 @@
 <view class="container">
   <!-- 标签页导航 -->
   <view class="tabs">
-    <view class="tab {{activeTab === 0 ? 'active' : ''}}" bindtap="switchTab" data-index="0">全部</view>
-    <view class="tab {{activeTab === 1 ? 'active' : ''}}" bindtap="switchTab" data-index="1">待接单</view>
-    <view class="tab {{activeTab === 2 ? 'active' : ''}}" bindtap="switchTab" data-index="2">运输中</view>
-    <view class="tab {{activeTab === 3 ? 'active' : ''}}" bindtap="switchTab" data-index="3">已完成</view>
+    <view class="tab {{activeTab === '0' ? 'active' : ''}}" bindtap="switchTab" data-index="0">全部</view>
+    <view class="tab {{activeTab === '1' ? 'active' : ''}}" bindtap="switchTab" data-index="1">待接单</view>
+    <view class="tab {{activeTab === '2' ? 'active' : ''}}" bindtap="switchTab" data-index="2">运输中</view>
+    <view class="tab {{activeTab === '3' ? 'active' : ''}}" bindtap="switchTab" data-index='3'>已完成</view>
   </view>
   
   <!-- 订单列表 -->

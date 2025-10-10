@@ -2,7 +2,7 @@
 Page({
   data: {
     userRole: '', // 用户角色：driver, owner, supervisor
-    activeTab: 0, // 当前激活的标签页：0-全部，1-待接单，2-运输中，3-已完成
+    activeTab: '0', // 当前激活的标签页：0-全部，1-待接单，2-运输中，3-已完成
     orderList: [
       {
         id: 'order001',
@@ -61,7 +61,7 @@ Page({
         }
       }
     ],
-    filteredOrders: [] // 根据标签页筛选后的订单列表
+    filteredOrders: [], // 根据标签页筛选后的订单列表
   },
 
   onLoad: function(options) {
@@ -74,7 +74,13 @@ Page({
     });
     
     // 初始化筛选订单
-    this.filterOrders(0);
+    this.filterOrders('0');
+  },
+
+  onShow() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().updateSelected();
+    }
   },
   
   // 切换标签页
@@ -83,29 +89,34 @@ Page({
     this.setData({
       activeTab: tabIndex
     });
-    
-    this.filterOrders(tabIndex);
+    this.filterOrders(this.data.activeTab);
   },
   
   // 根据标签页筛选订单
   filterOrders: function(tabIndex) {
+    // console.log('筛选事件传入的数',tabIndex);
     let filteredOrders = [];
-    
+
     switch(tabIndex) {
-      case 0: // 全部
+      case '0': // 全部
+      // console.log('切换到全部：',this.data.orderList);
         filteredOrders = this.data.orderList;
         break;
-      case 1: // 待接单
+      case '1': // 待接单
+      // console.log('切换到待接单：',this.data.orderList);
         filteredOrders = this.data.orderList.filter(item => item.status === '待接单');
         break;
-      case 2: // 运输中
+      case '2': // 运输中
         filteredOrders = this.data.orderList.filter(item => item.status === '运输中');
         break;
-      case 3: // 已完成
+      case '3': // 已完成
         filteredOrders = this.data.orderList.filter(item => item.status === '已完成');
         break;
+      default:
+        // console.log('默认值');
+        filteredOrders = this.data.orderList;
     }
-    
+    // console.log(filteredOrders);
     this.setData({
       filteredOrders: filteredOrders
     });

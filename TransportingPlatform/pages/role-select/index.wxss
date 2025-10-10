@@ -1,13 +1,26 @@
 /* pages/role-select/index.wxss */
+page {
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+}
+
 .container {
+  margin-top: 250rpx;
+  position: relative;
+  flex: 1;
+  padding: 40rpx 30rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  min-height: 100vh;
-  padding: 40rpx 30rpx;
-  box-sizing: border-box;
-  background-color: #f5f7fa;
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+  overflow-x: hidden; /* 隐藏水平滚动条 */
 }
 
 .header {

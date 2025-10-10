@@ -1,0 +1,33 @@
+/* custom-tab-bar/index.wxss */
+/* 调整 tabBar 高度 */
+.custom-tab-bar {
+  height: 100rpx !important;  /* 修改高度 */
+  display: flex;
+  background-color: #fff;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.tab-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 100rpx;
+}
+
+.icon {
+  width: 48rpx;
+  height: 48rpx;
+  margin-bottom: 6rpx;
+}
+
+/* 调整字体大小 */
+.text {
+  font-size: 26rpx !important;  /* 修改字体大小 */
+  color: #999999;
+}
+
+.active .text {
+  color: #2c3e50;  /* 选中颜色 */
+}

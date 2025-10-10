@@ -65,6 +65,12 @@ Page({
       userRole: userRole
     });
   },
+
+  onShow() {
+    if (typeof this.getTabBar === 'function' && this.getTabBar()) {
+      this.getTabBar().updateSelected();
+    }
+  },
   
   // 切换角色
   switchRole: function() {

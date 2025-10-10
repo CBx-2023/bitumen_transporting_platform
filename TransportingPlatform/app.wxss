@@ -1,4 +1,14 @@
 /**app.wxss**/
+page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f7f7;
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+}
+
 .container {
   height: 100%;
   display: flex;

@@ -14,7 +14,7 @@
 }
 
 .weui-navigation-bar__inner {
-  position: relative;
+  position: fixed;
   top: 0;
   left: 0;
   height: calc(var(--height) + env(safe-area-inset-top));
@@ -25,10 +25,12 @@
   padding-top: env(safe-area-inset-top);
   width: 100%;
   box-sizing: border-box;
+  z-index: 1000;
 }
 
 .weui-navigation-bar__left {
   position: relative;
+  top: 20rpx;
   padding-left: var(--left);
   display: flex;
   flex-direction: row;

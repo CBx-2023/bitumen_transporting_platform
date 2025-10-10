@@ -1,4 +1,5 @@
 <!-- pages/role-select/index.wxml -->
+<navigation-bar title="切换角色" back="{{true}}" color="white" background="#2c3e50"></navigation-bar>
 <view class="container">
   <view class="header">
     <text class="title">请选择您的角色</text>

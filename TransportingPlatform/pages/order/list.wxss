@@ -1,10 +1,12 @@
 /* pages/order/list.wxss */
 .container {
+  height: auto;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100vh; /* 确保容器至少占满整个视口高度 */
   background-color: #f5f7fa;
-  padding-top: 90rpx;
+  position: relative;
+  padding-top: 270rpx; /* 调整为导航栏的高度 */
 }
 
 /* 标签页导航 */
@@ -14,7 +16,7 @@
   padding: 0 30rpx;
   border-bottom: 2rpx solid #f0f0f0;
   position: fixed;
-  top: 0;
+  top: 180rpx;
   left: 0;
   right: 0;
   z-index: 100;
@@ -50,8 +52,9 @@
 
 /* 订单列表 */
 .order-list-container {
+  box-sizing: border-box;
   flex: 1;
-  padding: 30rpx;
+  padding: 10rpx;
 }
 
 .order-item {

@@ -4,18 +4,20 @@ page {
   display: flex;
   flex-direction: column;
 }
+
 .scrollarea {
   flex: 1;
   overflow-y: hidden;
 }
 
 .container {
+  margin-top: 250rpx;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 40rpx 30rpx;
+  justify-content: flex-start;
+  padding: 10rpx 50rpx;
   box-sizing: border-box;
   background-color: #f5f7fa;
 }
@@ -25,7 +27,6 @@ page {
   flex-direction: column;
   align-items: center;
   margin-top: 60rpx;
-  margin-bottom: 60rpx;
 }
 
 .logo {
@@ -46,6 +47,7 @@ page {
   width: 100%;
   background-color: #ffffff;
   border-radius: 16rpx;
+  margin-top: 90rpx;
   padding: 40rpx 30rpx;
   box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.1);
   margin-bottom: 40rpx;

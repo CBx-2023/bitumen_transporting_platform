@@ -1,8 +1,26 @@
 /* pages/driver/index.wxss */
 page {
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: #f7f7f7;
+  overflow-x: hidden; /* 隐藏水平滚动条 */
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+}
+
+.container {
+  margin-top: 200rpx;
+  position: relative;
+  flex: 1;
+  padding: 40rpx 30rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box; /* 确保padding不会增加宽度 */
+  overflow-x: hidden; /* 隐藏水平滚动条 */
 }
 
 .scrollarea {
@@ -10,15 +28,16 @@ page {
   overflow-y: hidden;
 }
 
-.container {
+/* .container {
   min-height: 100vh;
   padding: 30rpx;
   box-sizing: border-box;
   background-color: #f5f7fa;
-}
+} */
 
 /* 司机信息卡片 */
 .driver-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -79,6 +98,7 @@ page {
 
 /* 统计信息卡片 */
 .statistics-card {
+  width: 90%;
   background-color: #ffffff;
   border-radius: 16rpx;
   padding: 30rpx;
@@ -115,6 +135,7 @@ page {
 }
 
 .order-list {
+  width: 98%;
   margin-bottom: 30rpx;
 }
 
